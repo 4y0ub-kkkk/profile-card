@@ -1,0 +1,133 @@
+@font-face {
+    font-family: "kumbh";
+    src: url("assets/Kumbh_Sans/KumbhSans-VariableFont_YOPQ\,wght.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background-color:hsl(185, 75%, 39%);
+    --card-bg-color: white;
+    --font-color: hsl(229, 23%, 23%);
+    --font-color-light: hsl(0, 0%, 45%);
+}
+html{
+    overflow: hidden;
+}
+body{
+    font-family: "kumbh";
+    background-color:var(--background-color) ;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative
+}
+
+main::before{
+    content:url("assets/images/bg-pattern-top.svg");
+    position: absolute;
+    display: block;
+    top: calc(-950px + 100vh / 2);
+    left: calc(-950px + 100vw / 2);
+    z-index: -1;
+}
+main::after{
+    content:url("assets/images/bg-pattern-bottom.svg");
+    position: absolute;
+    display: block;
+    bottom: calc(-950px + 100vh / 2);
+    right: calc(-950px + 100vw / 2);
+    z-index: -1;
+}
+
+main{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.card{
+    max-inline-size: 350px;
+    inline-size: 100%;
+    background-color:var(--card-bg-color);
+    height: 375px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.card::before{
+    content: url("assets/images/bg-pattern-card.svg");
+    display: block;
+    position: absolute;
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    align-items: center;
+
+}
+
+.card-body img{
+    width: 6.5rem;
+    border-radius: 50%;
+    outline: 5px white solid;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+
+.card-body h1{
+    font-size: 18px;
+    color: var(--font-color);
+    margin-bottom: .5rem;
+    font-weight: 700;
+}
+.light{
+    font-weight: 400;
+    color: var(--font-color-light);
+}
+
+.card-body address{
+    font-size: 15px;
+    font-style: normal;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    padding: 1.3rem 1rem;
+    border-top: 2px solid rgb(230, 230, 230);
+}
+
+.card-footer p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--font-color);
+    font-weight: 700;
+    gap: .3rem;
+}
+
+.card-footer .light{
+    font-size: 10px;
+    letter-spacing: .1em;
+    
+}
